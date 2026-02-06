@@ -1,7 +1,7 @@
 (() => {
   window.BEER_DINO_CONFIG = {
     meta: {
-      title: "Beer Dino Runner",
+      title: "Dranken Uncle Runner",
       targetFps: 60,
       version: "0.1.0",
     },
@@ -57,7 +57,7 @@
       difficulty: {
         speed: {
           startPxPerSec: 380,
-          maxPxPerSec: 980,
+          maxPxPerSec: 3980,
           accelPxPerSec2: 28,
         },
         spawn: {
@@ -107,9 +107,9 @@
         id: "wife",
         type: "obstacle",
         spriteKey: "wife_obstacle",
-        size: { w: 140, h: 140 },
-        hitboxInset: { left: 20, right: 20, top: 20, bottom: 20 },
-        spawn: { y: 180, xMargin: 170 },
+        size: { w: 180, h: 180 },
+        hitboxInset: { left: 50, right: 50, top: 50, bottom: 50 },
+        spawn: { y: 140, xMargin: 170 },
       },
       hole: {
         id: "hole",

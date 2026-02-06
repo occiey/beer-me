@@ -62,7 +62,7 @@
     if (config.gameplay.score.bestScorePersistence !== "localStorage") {
       return 0;
     }
-    const stored = Number.parseInt(localStorage.getItem("beerDinoBest") || "0", 10);
+    const stored = Number.parseInt(localStorage.getItem("beerBest") || "0", 10);
     return Number.isFinite(stored) ? stored : 0;
   };
 
@@ -70,7 +70,7 @@
     if (config.gameplay.score.bestScorePersistence !== "localStorage") {
       return;
     }
-    localStorage.setItem("beerDinoBest", String(value));
+    localStorage.setItem("beerBest", String(value));
   };
 
   const loadImages = () => {
