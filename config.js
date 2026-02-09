@@ -28,12 +28,12 @@
         background: "assets/placeholder_bg.png",
       },
       sounds: {
-        bgm: "assets/bgm_loop.mp3",
-        jump: "assets/sfx_jump.wav",
-        burp: "assets/sfx_burp.wav",
-        scream: "assets/sfx_scream.wav",
-        fall: "assets/sfx_fall.wav",
-        game_over: "assets/sfx_gameover.wav",
+        bgm: "assets/bgm_loop",
+        jump: "assets/sfx_jump",
+        burp: "assets/sfx_burp",
+        scream: "assets/sfx_scream",
+        fall: "assets/sfx_fall",
+        game_over: "assets/sfx_gameover",
       },
     },
     controls: {
