@@ -101,7 +101,7 @@
         type: "collectible",
         spriteKey: "beer",
         size: { w: 120, h: 120 },
-        spawn: { yMin: 170, yMax: 200, xMargin: 120 },
+        spawn: { yMin: 0, yMax: 230, xMargin: 120 },
       },
       wife: {
         id: "wife",
