@@ -1,7 +1,7 @@
 (() => {
   window.BEER_DINO_CONFIG = {
     meta: {
-      title: "Dranken Uncle Runner",
+      title: "Drunken Uncle Runner",
       targetFps: 60,
       version: "0.1.0",
     },
@@ -132,7 +132,7 @@
         scrollsWithSpeed: true,
       },
       debug: {
-        showHitboxes: true,
+        showHitboxes: false,
       },
     },
   };

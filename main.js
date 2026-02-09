@@ -463,9 +463,11 @@
     }
     ctx.fillStyle = color;
     ctx.fillRect(x, y, w, h);
-    ctx.fillStyle = "#111";
-    ctx.font = "14px system-ui";
-    ctx.fillText(label, x + 6, y + h / 2);
+    if (label) {
+      ctx.fillStyle = "#111";
+      ctx.font = "14px system-ui";
+      ctx.fillText(label, x + 6, y + h / 2);
+    }
   };
 
   const render = (now) => {
@@ -501,12 +503,27 @@
       ctx.fillStyle = "#d8d2c8";
       ctx.fillRect(0, groundY, canvas.width, canvas.height - groundY);
       ctx.fillStyle = "#b3aea5";
-      ctx.fillRect(0, groundY - 2, canvas.width, 2);
+      const holes = obstacles
+        .filter((obs) => obs.type === "hole")
+        .map((hole) => ({ start: hole.x, end: hole.x + hole.gapWidth }))
+        .sort((a, b) => a.start - b.start);
+      let cursorX = 0;
+      for (const hole of holes) {
+        const lineEnd = Math.max(0, Math.min(hole.start, canvas.width));
+        if (lineEnd > cursorX) {
+          ctx.fillRect(cursorX, groundY - 2, lineEnd - cursorX, 2);
+        }
+        cursorX = Math.max(cursorX, hole.end);
+        if (cursorX >= canvas.width) break;
+      }
+      if (cursorX < canvas.width) {
+        ctx.fillRect(cursorX, groundY - 2, canvas.width - cursorX, 2);
+      }
     }
 
     obstacles.forEach((obs) => {
       if (obs.type === "hole") {
-        drawImageOrRect(obs.spriteKey, obs.x, obs.y, obs.width, obs.height, "#2b2b2b", "HOLE");
+        drawImageOrRect(obs.spriteKey, obs.x, obs.y, obs.width, obs.height, "#ffffff", "");
       } else {
         drawImageOrRect(obs.spriteKey, obs.x, obs.y, obs.width, obs.height, "#ffb6b6", "WIFE");
       }
