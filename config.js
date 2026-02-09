@@ -73,8 +73,8 @@
     physics: {
       gravityPxPerSec2: 2800,
       player: {
-        width: 140,
-        height: 140,
+        width: 110,
+        height: 110,
         startX: 160,
         startY: 180,
         hitboxInset: { left: 35, right: 35, top: 35, bottom: 35 },
